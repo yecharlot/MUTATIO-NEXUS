@@ -101,7 +101,7 @@ body {
 }
 .panel-head h2, .card h3 { margin: 0; font-size: 1rem; font-weight: 600; }
 .map-panel { padding: 0; overflow: hidden; }
-#iso-map { width: 100%; height: auto; display: block; background: linear-gradient(180deg, #07101c, #0a1a2e 40%, #0b2438); }
+#iso-map { width: 100%; height: auto; min-height: 280px; display: block; background: #061018; border-radius: 0 0 16px 16px; }
 .hint { margin: 0; padding: 0.5rem 1rem 0.85rem; font-size: 0.8rem; color: var(--muted); }
 .tag {
   font-size: 0.75rem; padding: 0.2rem 0.55rem; border-radius: 999px;
