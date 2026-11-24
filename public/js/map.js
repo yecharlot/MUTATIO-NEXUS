@@ -154,15 +154,15 @@ const IsoMap = {
     // Cayos pequeños alrededor del archipiélago.
     [[-22, -12, 2.1], [-14, 12, 1.4], [10, -13, 2.3], [19, -10, 1.7], [32, -6, 1.3], [5, 15, 1.2]].forEach(([x,z,s]) => {
       const cayo = new THREE.Mesh(new THREE.SphereGeometry(1, 18, 12), new THREE.MeshStandardMaterial({ color: 0x72a77a, roughness: 0.9 }));
-      cayo.scale.set(s * 1.6, 0.65, s); cayo.position.set(x, 0.25, z); cayo.castShadow = true; this.scene.add(cayo);
+      cayo.scale.set(s * 1.6, 0.65, s); cayo.position.set(x, 2.25, z); cayo.castShadow = true; this.scene.add(cayo);
     });
   },
 
   _tree(x, z, scale = 1) {
     const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.2, 1.8 * scale, 6), new THREE.MeshStandardMaterial({ color: 0x78583b, roughness: 1 }));
-    trunk.position.set(x, 1.55 + 0.9 * scale, z); trunk.castShadow = true; this.scene.add(trunk);
+    trunk.position.set(x, 2.4 + 0.9 * scale, z); trunk.castShadow = false; this.scene.add(trunk);
     const crown = new THREE.Mesh(new THREE.SphereGeometry(0.8 * scale, 8, 6), new THREE.MeshStandardMaterial({ color: 0x4d9867, roughness: 1 }));
-    crown.scale.set(1.25, 0.65, 1.1); crown.position.set(x, 2.7 * scale + 1.3, z); crown.castShadow = true; this.scene.add(crown);
+    crown.scale.set(1.25, 0.65, 1.1); crown.position.set(x, 2.4 + 1.8 * scale, z); crown.castShadow = false; this.scene.add(crown);
   },
 
   _landmarks() {
@@ -187,11 +187,11 @@ const IsoMap = {
         const r = 1.0 + (i % 4) * 0.62;
         const height = 0.55 + ((i * 7) % 5) * 0.34;
         const building = new THREE.Mesh(new THREE.BoxGeometry(0.55 + (i % 3) * 0.18, height, 0.55 + (i % 2) * 0.18), new THREE.MeshStandardMaterial({ color: ci === 0 ? 0xc9b58d : 0x9db5a0, roughness: 0.78, emissive: 0x302619, emissiveIntensity: 0.12 }));
-        building.position.set(city.x + Math.cos(a) * r, 1.35 + height / 2, city.z + Math.sin(a) * r);
+        building.position.set(city.x + Math.cos(a) * r, 2.5 + height / 2, city.z + Math.sin(a) * r);
         building.castShadow = true; building.receiveShadow = true; this.scene.add(building);
       }
       const beacon = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.28, 2.1, 8), new THREE.MeshStandardMaterial({ color: 0xe7c77f, emissive: 0x9a5d22, emissiveIntensity: 0.55 }));
-      beacon.position.set(city.x, 2.8, city.z); this.scene.add(beacon);
+      beacon.position.set(city.x, 3.65, city.z); this.scene.add(beacon);
     });
 
     // Corredores de conexión como líneas luminosas sobre el terreno.
