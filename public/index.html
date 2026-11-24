@@ -1,115 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>MUTATIO — NEXUS · Cuba</title>
-  <meta name="description" content="MUTATIO NEXUS: mundo persistente. Cuba — El legado de la isla. Decisiones colectivas, CBN interno, misterio bajo el mar." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/main.css" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06131c">
+<meta name="description" content="MUTATIO NEXUS: entra en un mundo persistente donde las decisiones colectivas transforman Cuba.">
+<title>MUTATIO — NEXUS | El mundo cambia contigo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/landing.css"><script src="/js/landing.js" defer></script>
 </head>
 <body>
-  <div id="intro" class="intro">
-    <canvas id="intro-canvas"></canvas>
-    <div class="intro-ui">
-      <p class="intro-kicker">MUTATIO · UNIVERSO NEXUS</p>
-      <h1 class="intro-title">Cuba — El legado de la isla</h1>
-      <p class="intro-copy" id="intro-copy">El planeta gira. El Caribe se acerca…</p>
-      <div class="intro-actions">
-        <button type="button" class="btn primary" id="btn-enter">Entrar al mundo</button>
-        <button type="button" class="btn ghost" id="btn-skip">Omitir introducción</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="app" class="app hidden">
-    <header class="topbar">
-      <div class="brand">
-        <span class="logo">MUTATIO</span>
-        <span class="sub">NEXUS · Cuba</span>
-      </div>
-      <div class="top-stats" id="top-stats"></div>
-      <div class="user-box" id="user-box">
-        <button type="button" class="btn small" id="btn-auth-open">Entrar / Registro</button>
-      </div>
-    </header>
-
-    <main class="layout">
-      <section class="map-panel">
-        <div class="panel-head">
-          <h2>Mapa isométrico</h2>
-          <span class="tag" id="turn-tag">Turno 1</span>
-        </div>
-        <canvas id="iso-map" width="900" height="520"></canvas>
-        <p class="hint">Las regiones cambian de color según crisis, tensión o esperanza.</p>
-      </section>
-
-      <aside class="side">
-        <section class="card" id="resources-card">
-          <h3>Recursos</h3>
-          <div id="resources" class="meters"></div>
-        </section>
-        <section class="card" id="indicators-card">
-          <h3>Indicadores</h3>
-          <div id="indicators" class="meters"></div>
-        </section>
-        <section class="card">
-          <h3>Misterio</h3>
-          <div id="mystery" class="mystery"></div>
-        </section>
-      </aside>
-
-      <section class="feed">
-        <div class="tabs">
-          <button type="button" class="tab active" data-tab="events">Acontecimientos</button>
-          <button type="button" class="tab" data-tab="proposals">Propuestas</button>
-          <button type="button" class="tab" data-tab="social">Social</button>
-          <button type="button" class="tab" data-tab="cbn">CBN</button>
-        </div>
-        <div id="tab-events" class="tab-pane active"></div>
-        <div id="tab-proposals" class="tab-pane"></div>
-        <div id="tab-social" class="tab-pane"></div>
-        <div id="tab-cbn" class="tab-pane"></div>
-      </section>
-    </main>
-  </div>
-
-  <div id="modal-auth" class="modal hidden">
-    <div class="modal-card">
-      <button type="button" class="modal-close" id="auth-close" aria-label="Cerrar">×</button>
-      <h2>Identidad en NEXUS</h2>
-      <div class="auth-tabs">
-        <button type="button" class="tab active" data-auth="login">Entrar</button>
-        <button type="button" class="tab" data-auth="register">Registro</button>
-      </div>
-      <form id="form-login" class="form">
-        <label>Usuario <input name="username" required minlength="3" autocomplete="username" /></label>
-        <label>Clave <input name="password" type="password" required minlength="6" autocomplete="current-password" /></label>
-        <button class="btn primary" type="submit">Entrar</button>
-      </form>
-      <form id="form-register" class="form hidden">
-        <label>Usuario <input name="username" required minlength="3" /></label>
-        <label>Nombre visible <input name="displayName" /></label>
-        <label>Clave <input name="password" type="password" required minlength="6" /></label>
-        <label>Comunidad
-          <select name="community">
-            <option value="cientificos">Científicos</option>
-            <option value="constructores">Constructores</option>
-            <option value="guardianes">Guardianes</option>
-          </select>
-        </label>
-        <button class="btn primary" type="submit">Crear identidad</button>
-      </form>
-      <p class="fine">CBN es unidad interna del juego. No es dinero real ni promesa de rentabilidad.</p>
-    </div>
-  </div>
-
-  <div id="toast" class="toast hidden"></div>
-  <script src="/js/api.js"></script>
-  <script src="/js/intro.js"></script>
-  <script src="/js/map.js"></script>
-  <script src="/js/app.js"></script>
-</body>
-</html>
+<div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+<header class="site-header">
+<a class="wordmark" href="/"><span class="mark">M</span><span>MUTATIO</span></a>
+<nav><a href="#universo">El universo</a><a href="#como-funciona">Cómo funciona</a></nav>
+<a class="header-enter" href="/juego">Entrar ↗</a>
+</header>
+<main>
+<section class="hero">
+<div class="hero-copy">
+<p class="eyebrow"><span class="pulse"></span> UNIVERSO NEXUS · PRIMER MUNDO</p>
+<h1>El futuro no está escrito.<br><em>Se construye.</em></h1>
+<p class="lead">Un mundo vivo. Miles de decisiones. Una historia que cambia con quienes participan.</p>
+<div class="hero-actions"><a class="button button-primary" href="/juego">Entrar al mundo <span>→</span></a><a class="button button-quiet" href="#universo">Descubrir MUTATIO</a></div>
+<div class="hero-note"><span class="note-line"></span><span>Tu primera decisión puede cambiar el rumbo de la isla.</span></div>
+</div>
+<div class="world-art" aria-label="Representación artística de Cuba">
+<div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="world-glow"></div><div class="world-grid"></div>
+<svg class="island" viewBox="0 0 760 360" role="img" aria-label="Silueta artística de Cuba">
+<defs><linearGradient id="land" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8d49a"/><stop offset=".48" stop-color="#7bc5a6"/><stop offset="1" stop-color="#286f71"/></linearGradient><filter id="islandShadow"><feGaussianBlur stdDeviation="12"/></filter></defs>
+<path class="island-shadow" d="M53 171 C88 149 126 151 164 143 C207 134 230 112 275 124 C315 135 346 151 384 145 C431 138 468 113 515 120 C553 126 584 148 620 143 C658 138 688 153 713 169 C677 180 650 195 612 194 C569 193 543 214 505 211 C461 208 432 229 388 222 C347 216 320 233 277 222 C235 212 210 231 173 216 C130 199 93 199 53 171Z" transform="translate(0 16)"/>
+<path class="island-main" d="M53 171 C88 149 126 151 164 143 C207 134 230 112 275 124 C315 135 346 151 384 145 C431 138 468 113 515 120 C553 126 584 148 620 143 C658 138 688 153 713 169 C677 180 650 195 612 194 C569 193 543 214 505 211 C461 208 432 229 388 222 C347 216 320 233 277 222 C235 212 210 231 173 216 C130 199 93 199 53 171Z"/>
+<path class="island-coast" d="M53 171 C88 149 126 151 164 143 C207 134 230 112 275 124 C315 135 346 151 384 145 C431 138 468 113 515 120 C553 126 584 148 620 143 C658 138 688 153 713 169 C677 180 650 195 612 194 C569 193 543 214 505 211 C461 208 432 229 388 222 C347 216 320 233 277 222 C235 212 210 231 173 216 C130 199 93 199 53 171Z"/>
+<g class="city-lights"><circle cx="165" cy="160" r="3"/><circle cx="285" cy="158" r="2.5"/><circle cx="405" cy="175" r="3"/><circle cx="520" cy="165" r="2.5"/><circle cx="620" cy="169" r="2"/></g>
+</svg>
+<div class="art-label label-west"><i></i> HABANA</div><div class="art-label label-east"><i></i> ORIENTE</div>
+<div class="art-caption"><span>NEXUS / 001</span><span>CARIBE · 21°N 78°W</span></div>
+<div class="floating-chip chip-top">UN MUNDO PERSISTENTE</div><div class="floating-chip chip-bottom"><span class="chip-dot"></span> EL MUNDO ESTÁ EN MOVIMIENTO</div>
+</div>
+<div class="hero-bottom"><span>01 — UNA NUEVA FORMA DE PARTICIPAR</span><span>DESPLÁZATE PARA EXPLORAR ↓</span></div>
+</section>
+<section class="intro-section" id="universo"><div class="section-index">01 / EL UNIVERSO</div><div class="intro-content">
+<p class="eyebrow">NO ES SOLO UN JUEGO. NO ES SOLO UNA RED SOCIAL.</p><h2>Es un mundo compartido<br>que <em>recuerda lo que haces.</em></h2>
+<p>Cada acontecimiento abre posibilidades. Las comunidades proponen, debaten y votan. Las decisiones aprobadas transforman los recursos, los territorios y el curso de la historia. Lo que ocurre queda registrado y pasa a formar parte del mundo.</p>
+</div></section>
+<section class="feature-section" id="como-funciona"><div class="section-index">02 / CÓMO FUNCIONA</div><div class="feature-grid">
+<article class="feature-card"><span class="feature-number">01</span><div class="feature-icon">◎</div><h3>Explora</h3><p>Descubre el territorio, sus recursos, sus regiones y los acontecimientos que están cambiando el mundo.</p></article>
+<article class="feature-card"><span class="feature-number">02</span><div class="feature-icon">⌘</div><h3>Colabora</h3><p>Únete a una comunidad, comparte propuestas y construye soluciones junto a otros participantes.</p></article>
+<article class="feature-card"><span class="feature-number">03</span><div class="feature-icon">↗</div><h3>Transforma</h3><p>Participa en decisiones colectivas y observa cómo sus consecuencias quedan reflejadas en el mundo.</p></article>
+</div></section>
+<section class="world-cta"><div><p class="eyebrow">TU HISTORIA COMIENZA AQUÍ</p><h2>Cuba — <em>El legado de la isla</em></h2><p>El primer mundo de NEXUS ya te espera.</p></div><a class="button button-primary" href="/juego">Entrar al mundo <span>→</span></a></section>
+</main>
+<footer class="site-footer"><a class="wordmark" href="/"><span class="mark">M</span><span>MUTATIO</span></a><span>NEXUS · CUBA — EL LEGADO DE LA ISLA</span><span>UN MUNDO QUE CAMBIA CONTIGO</span></footer>
+</body></html>

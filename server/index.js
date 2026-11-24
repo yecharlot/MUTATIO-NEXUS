@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 app.use('/api', api);
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-app.get('/{*path}', (req, res, next) => {
+app.get('/juego', (req, res) => {\n  res.sendFile(path.join(__dirname, '..', 'public', 'game.html'));\n});\n\napp.get('/{*path}', (req, res, next) => {
   if (req.path.startsWith('/api')) return next();
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
