@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>MUTATIO — NEXUS · Cuba</title>
+  <meta name="description" content="MUTATIO NEXUS: mundo persistente. Cuba — El legado de la isla. Decisiones colectivas, CBN interno, misterio bajo el mar." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+  <div id="intro" class="intro">
+    <canvas id="intro-canvas"></canvas>
+    <div class="intro-ui">
+      <p class="intro-kicker">MUTATIO · UNIVERSO NEXUS</p>
+      <h1 class="intro-title">Cuba — El legado de la isla</h1>
+      <p class="intro-copy" id="intro-copy">El planeta gira. El Caribe se acerca…</p>
+      <div class="intro-actions">
+        <button type="button" class="btn primary" id="btn-enter">Entrar al mundo</button>
+        <button type="button" class="btn ghost" id="btn-skip">Omitir introducción</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">MUTATIO</span>
+        <span class="sub">NEXUS · Cuba</span>
+      </div>
+      <div class="top-stats" id="top-stats"></div>
+      <div class="user-box" id="user-box">
+        <button type="button" class="btn small" id="btn-auth-open">Entrar / Registro</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="map-panel">
+        <div class="panel-head">
+          <h2>Territorio vivo · Mapa 3D</h2>
+          <span class="tag" id="turn-tag">Turno 1</span>
+        </div>
+        <div id="iso-map" role="application" aria-label="Mapa 3D interactivo de Cuba"></div>
+        <p class="hint">Explora Cuba en 3D. Arrastra para rotar, usa la rueda para acercar y selecciona regiones para conocer su estado.</p>
+      </section>
+
+      <aside class="side">
+        <section class="card" id="resources-card"><h3>Recursos</h3><div id="resources" class="meters"></div></section>
+        <section class="card" id="indicators-card"><h3>Indicadores</h3><div id="indicators" class="meters"></div></section>
+        <section class="card"><h3>Misterio</h3><div id="mystery" class="mystery"></div></section>
+      </aside>
+
+      <section class="feed">
+        <div class="tabs">
+          <button type="button" class="tab active" data-tab="events">Acontecimientos</button>
+          <button type="button" class="tab" data-tab="proposals">Propuestas</button>
+          <button type="button" class="tab" data-tab="social">Social</button>
+          <button type="button" class="tab" data-tab="cbn">CBN</button>
+        </div>
+        <div id="tab-events" class="tab-pane active"></div>
+        <div id="tab-proposals" class="tab-pane"></div>
+        <div id="tab-social" class="tab-pane"></div>
+        <div id="tab-cbn" class="tab-pane"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="modal-auth" class="modal hidden">
+    <div class="modal-card">
+      <button type="button" class="modal-close" id="auth-close" aria-label="Cerrar">×</button>
+      <h2>Identidad en NEXUS</h2>
+      <div class="auth-tabs">
+        <button type="button" class="tab active" data-auth="login">Entrar</button>
+        <button type="button" class="tab" data-auth="register">Registro</button>
+      </div>
+      <form id="form-login" class="form">
+        <label>Usuario <input name="username" required minlength="3" autocomplete="username" /></label>
+        <label>Clave <input name="password" type="password" required minlength="6" autocomplete="current-password" /></label>
+        <button class="btn primary" type="submit">Entrar</button>
+      </form>
+      <form id="form-register" class="form hidden">
+        <label>Usuario <input name="username" required minlength="3" /></label>
+        <label>Nombre visible <input name="displayName" /></label>
+        <label>Clave <input name="password" type="password" required minlength="6" /></label>
+        <label>Comunidad<select name="community"><option value="cientificos">Científicos</option><option value="constructores">Constructores</option><option value="guardianes">Guardianes</option></select></label>
+        <button class="btn primary" type="submit">Crear identidad</button>
+      </form>
+      <p class="fine">CBN es unidad interna del juego. No es dinero real ni promesa de rentabilidad.</p>
+    </div>
+  </div>
+  <div id="toast" class="toast hidden"></div>
+  <script src="/js/api.js"></script>
+  <script src="/js/intro.js"></script>
+  <script type="module" src="/js/map.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
