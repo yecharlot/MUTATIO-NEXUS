@@ -12,7 +12,7 @@ npm start
 # http://127.0.0.1:4050
 ```
 
-## Experiencia visual
+## Entrada web\n\nLa ruta `/` sirve la página pública de presentación de MUTATIO. El acceso principal dirige a `/juego`, donde se carga la aplicación NEXUS existente. Express sirve ambas páginas y sus recursos desde `public/`; no se necesita un servidor estático adicional.\n\n## Experiencia visual
 
 El mapa del mundo utiliza Three.js 0.180.0 mediante import map y jsDelivr. Incluye escena 3D estilizada de Cuba, relieve, vegetación, ciudades, rutas, marcadores de regiones, iluminación, agua animada y cámara orbital. La capa 3D representa el estado que entrega el backend; no contiene reglas económicas ni autoridad sobre el juego.
 
